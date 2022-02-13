@@ -35,11 +35,16 @@ ADD counter.txt /youtubedl/origconfigs
 
 # Update packages and install ffmpeg.  
 RUN apt-get update   
-RUN apt-get install -y ffmpeg nano
+RUN apt-get install -y ffmpeg nano python3-mutagen
 RUN rm -rf /var/lib/apt/lists/*  
 
 RUN pip install --upgrade pip
-RUN pip install --upgrade youtube-dl
+RUN pip install --upgrade pycrypto
+RUN pip install --upgrade pycryptodomex
+RUN pip install --upgrade websockets
+RUN pip install --upgrade ffprobe
+RUN pip install --upgrade mutagen
+RUN pip install --upgrade yt-dlp 
 
 # Runs a sync once a day
 CMD ["python", "/youtubedl/runner.py"]
