@@ -1,2 +1,1 @@
-# ytdlp-manual
-ytdlp-manual
+# youtubedl-manual
